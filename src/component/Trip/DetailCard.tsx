@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import SliderCard from "./SliderCard";
 import LinkButton from "../Button/LinkButton";
+import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 
 const DetailCard = ({ data }: any) => {
   console.log(data?.data, "dd");
+  const { data: userData, isLoading } = useGetProfileQuery("");
 
   const {
     photos,
@@ -52,10 +54,14 @@ const DetailCard = ({ data }: any) => {
           </div>
 
           <div className="card-actions justify-end my-2 inline md:inline   ">
-            <LinkButton
-              link={`/dashboard/travel/travelRequest/${id}`}
-              title={"Travel Request"}
-            />
+            {userData?.data?.id === userId ? (
+              <h1 className=" text-red-500">You are not accessible</h1>
+            ) : (
+              <LinkButton
+                link={`/dashboard/travel/travelRequest/${id}`}
+                title={"Travel Request"}
+              />
+            )}
           </div>
         </div>
       </div>

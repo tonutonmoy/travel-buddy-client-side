@@ -34,14 +34,24 @@ const TravelRequest = ({ params }: any) => {
     const country = e?.target?.country?.value;
     const city = e?.target?.city?.value;
 
-    const res = await addFunction({ tripId: id, userId: data?.data?.id });
+    const info = {
+      name,
+      email,
+      number,
+      country,
+      city,
+      tripId: id,
+      userId: data?.data?.id,
+    };
+
+    const res = await addFunction(info);
 
     console.log(res, "res");
 
-    if (res?.data.success === true) {
+    if (res?.data?.success === true) {
       toast.success(res.data.message);
     }
-    if (res?.data.success === false) {
+    if (res?.data?.success === false) {
       toast.success(res.data.message);
     }
   };

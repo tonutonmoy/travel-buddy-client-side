@@ -8,6 +8,12 @@ export const tripApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getPostedTrip: build.query({
+      query: () => ({
+        url: `/tripsPosted`,
+        method: "GET",
+      }),
+    }),
     getTripForFilter: build.query({
       query: () => ({
         url: `/trips`,
@@ -37,4 +43,5 @@ export const {
   useGetTripQuery,
   useGetTripForFilterQuery,
   useGetSingleTripQuery,
+  useGetPostedTripQuery,
 } = tripApi;

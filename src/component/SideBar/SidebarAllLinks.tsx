@@ -24,10 +24,16 @@ const SidebarAllLinks = () => {
               Create Trip
             </Link>
             <Link
-              href="/dashboard/myTrip"
+              href="/dashboard/travel/travelRequestHistory"
               className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
             >
-              My Trip
+              Travel Posts
+            </Link>
+            <Link
+              href="/dashboard/travel/travelPosts"
+              className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
+            >
+              Travel Request History
             </Link>
             <a
               href="#"

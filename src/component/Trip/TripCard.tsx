@@ -13,14 +13,11 @@ const TripCard = ({ data }: any) => {
     travelType,
   } = data;
   return (
-    <div className="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900">
-      <div className="rounded-t-lg h-[200px] overflow-hidden">
-        <img
-          className="object-cover object-top w-full"
-          src={photos?.[0]}
-          alt="Mountain"
-        />
-      </div>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg my-20">
+      <figure>
+        {" "}
+        <img className=" h-[300px] w-full" src={photos?.[0]} alt="Mountain" />
+      </figure>
 
       <div className=" space-y-1 px-10 py-5">
         <p className="text-gray-500">
