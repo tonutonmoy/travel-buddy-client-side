@@ -89,14 +89,18 @@ const Profile = () => {
       );
     }
 
-    const updateData = await updateFunction({ photo: images[0] }).unwrap();
+    try {
+      const updateData = await updateFunction({ photo: images[0] }).unwrap();
 
-    if (updateData?.success === true) {
-      toast.success(updateData.message);
-      refetch();
-    }
-    if (updateData?.success === false) {
-      toast.success(updateData.message);
+      if (updateData?.success === true) {
+        toast.success(updateData.message);
+        refetch();
+      }
+      if (updateData?.success === false) {
+        toast.success(updateData.message);
+      }
+    } catch (error: any) {
+      toast.success(error?.data?.message);
     }
   };
   return (

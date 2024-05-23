@@ -16,7 +16,7 @@ const TravelPosts = () => {
 
   //   };
 
-  const { data, isLoading } = useGetPostedTripQuery("", {
+  const { data, isLoading, refetch } = useGetPostedTripQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
@@ -35,7 +35,7 @@ const TravelPosts = () => {
       {data?.data?.length > 0 ? (
         <div className=" grid grid-cols-3 gap-10 ">
           {data?.data?.map((a: any) => (
-            <TravelPostCard key={a?.id} data={a} />
+            <TravelPostCard key={a?.id} data={a} refetch={refetch} />
           ))}
         </div>
       ) : (

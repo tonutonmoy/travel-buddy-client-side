@@ -3,9 +3,11 @@ import React from "react";
 import Link from "next/link";
 import { toast } from "sonner";
 import { useDeleteTripMutation } from "@/Redux/api/Trip/tripApi";
+import { useRouter } from "next/navigation";
 
-const TravelPostCard = ({ data }: any) => {
+const TravelPostCard = ({ data, refetch }: any) => {
   const [deleteFunction] = useDeleteTripMutation();
+  const router = useRouter();
   const {
     id,
     userId,
@@ -17,13 +19,17 @@ const TravelPostCard = ({ data }: any) => {
     travelType,
   } = data;
   const deleteHandler = async () => {
-    const res = await deleteFunction(id);
-
-    if (res?.data.success === true) {
-      toast.success(res.data.message);
-    }
-    if (res?.data.success === false) {
-      toast.success(res.data.message);
+    try {
+      const res = await deleteFunction(id).unwrap();
+      if (res?.success === true) {
+        toast.success(res.message);
+        refetch();
+      }
+      if (res?.success === false) {
+        toast.success(res.message);
+      }
+    } catch (error: any) {
+      toast.success(error?.data?.message);
     }
   };
   return (
