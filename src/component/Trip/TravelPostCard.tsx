@@ -1,8 +1,11 @@
 import React from "react";
-import LinkButton from "../Button/LinkButton";
+
 import Link from "next/link";
+import { toast } from "sonner";
+import { useDeleteTripMutation } from "@/Redux/api/Trip/tripApi";
 
 const TravelPostCard = ({ data }: any) => {
+  const [deleteFunction] = useDeleteTripMutation();
   const {
     id,
     userId,
@@ -13,6 +16,16 @@ const TravelPostCard = ({ data }: any) => {
     photos,
     travelType,
   } = data;
+  const deleteHandler = async () => {
+    const res = await deleteFunction(id);
+
+    if (res?.data.success === true) {
+      toast.success(res.data.message);
+    }
+    if (res?.data.success === false) {
+      toast.success(res.data.message);
+    }
+  };
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg my-20">
       <figure>
@@ -43,14 +56,17 @@ const TravelPostCard = ({ data }: any) => {
         <div>
           {" "}
           <Link
-            href={`/tripDetails/${id}`}
+            href={`/dashboard/travel/travelPosts/travelPostEdit/${id}`}
             className="align-middle w-[130px] block select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
           >
-            eidet
+            Edit
           </Link>
         </div>
         <div>
-          <button className="align-middle w-[130px] select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
+          <button
+            onClick={deleteHandler}
+            className="align-middle w-[130px] select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+          >
             Delete
           </button>
         </div>

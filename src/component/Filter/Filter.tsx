@@ -11,6 +11,7 @@ import { setLimit, setTripData } from "@/Redux/api/Trip/tripSlice";
 import destinationHelper from "@/helper/filterHelper/destinationHelper";
 import topBudgetHelper from "@/helper/filterHelper/topBudgetHelper";
 import dateHelper from "@/helper/filterHelper/dateHelper";
+import Loading from "../Loading/Loading";
 
 const Filter = () => {
   // const [maxBudget, setMaxBudget] = useState("");
@@ -67,17 +68,21 @@ const Filter = () => {
   const { data: getFilterData, isLoading } = useGetTripForFilterQuery("");
   const dispatch = useAppDispatch();
 
-  console.log(startDate);
-
   useEffect(() => {
+    console.log(data, "abul");
     dispatch(setTripData(data));
   }, [data, limit]);
 
-  console.log(limit);
-
+  console.log(startDate);
   if (isLoading) {
-    return <div>loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
+
+  console.log(limit);
 
   const topBudget = topBudgetHelper(getFilterData);
 

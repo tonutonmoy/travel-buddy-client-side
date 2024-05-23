@@ -4,20 +4,37 @@ import {
   useGetProfileQuery,
   useUpdateProfileMutation,
 } from "@/Redux/api/profile/profileApi";
+import {
+  getUserInfo,
+  removeFromLocalStorage,
+} from "@/Services/Action/auth.services";
+import LinkButton from "@/component/Button/LinkButton";
+import multipleImageHelper from "@/helper/imageHelper/multipleImageHelper";
+import { jwtDecoratedHelper } from "@/helper/jwtHelper/jwtHelper";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const Profile = () => {
-  const { data } = useGetProfileQuery("");
+  const { data, refetch } = useGetProfileQuery("", {
+    pollingInterval: 0,
+    refetchOnMountOrArgChange: true,
+  });
   const [updateFunction] = useUpdateProfileMutation();
+
+  const router = useRouter();
 
   // Define state variables for input values
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
+  const [photo, setPhoto] = useState([]);
+  const [modal, setModal] = useState(false);
 
   const [bio, setBio] = useState("");
+  console.log(data, "d");
 
   useEffect(() => {
     setId(data?.data?.id || "");
@@ -32,7 +49,8 @@ const Profile = () => {
 
     const info = {
       name,
-
+      age,
+      bio,
       email,
     };
 
@@ -40,13 +58,45 @@ const Profile = () => {
       const updateData = await updateFunction(info).unwrap();
       if (updateData && updateData.success === true) {
         toast.success(updateData?.message);
-        setName(updateData?.data?.name);
+        const token = getUserInfo();
+        const { email }: any = jwtDecoratedHelper(token || "");
 
-        setEmail(updateData?.data?.email);
+        if (email !== updateData?.data?.email) {
+          console.log(email, updateData?.data?.email);
+          removeFromLocalStorage();
+          setTimeout(() => {
+            router.refresh();
+            toast.success("Please login agin ");
+          }, 2000);
+        }
+
+        console.log(updateData, "l");
       }
     } catch (error: any) {
       console.log(error);
       toast.error(error?.data.message);
+    }
+  };
+
+  const PhotoHandler = async (e: any) => {
+    e.preventDefault();
+    setModal(false);
+    const images = await multipleImageHelper(photo);
+
+    if (images?.length < 1) {
+      return toast.error(
+        "Image problem. Image not uploaded please try again later."
+      );
+    }
+
+    const updateData = await updateFunction({ photo: images[0] }).unwrap();
+
+    if (updateData?.success === true) {
+      toast.success(updateData.message);
+      refetch();
+    }
+    if (updateData?.success === false) {
+      toast.success(updateData.message);
     }
   };
   return (
@@ -58,22 +108,22 @@ const Profile = () => {
               <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                 <img
                   className="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-indigo-500"
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                  src={data?.data?.photo}
                   alt="Bordered avatar"
                 />
                 <div className="flex flex-col space-y-5 sm:ml-8">
                   <button
-                    type="button"
-                    className="py-3.5 px-7 text-base font-medium text-white  focus:outline-none bg-[#202142] rounded-lg border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200"
+                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none bg-[#202142] rounded-lg border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200"
+                    onClick={() => setModal(true)}
                   >
                     Change picture
                   </button>
-                  <button
-                    type="button"
-                    className="py-3.5 px-7 text-base font-medium text-indigo-900 focus:outline-none bg-white rounded-lg border border-indigo-200 hover:bg-indigo-100 hover:text-[#202142] focus:z-10 focus:ring-4 focus:ring-indigo-200"
+                  <Link
+                    href={"/dashboard/profile/changePassword"}
+                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none bg-gray-500  rounded-lg border border-indigo-200 hover:bg-gray-700  focus:z-10 focus:ring-4 focus:ring-indigo-200"
                   >
-                    Delete picture
-                  </button>
+                    Change Password
+                  </Link>
                 </div>
               </div>
               <form
@@ -159,6 +209,36 @@ const Profile = () => {
           </div>
         </div>
       </section>
+
+      {/* Open the modal using document.getElementById('ID').showModal() method */}
+
+      <dialog className={`${modal ? "block" : "hidden"}   bg-gray-900 p-10`}>
+        <div className=" bg-gray-900">
+          <div className="bg-gray-900">
+            <div className=" ">
+              <div className=" flex justify-center">
+                <input
+                  onChange={(e) => setPhoto(Array.from(e.target.files as any))}
+                  type="file"
+                  className="file-input w-full max-w-xs my-3  block "
+                />
+              </div>
+              <div className=" flex justify-between mt-10">
+                <button
+                  onClick={() => setModal(false)}
+                  className="btn text-white bg-red-500"
+                >
+                  Close
+                </button>
+
+                <button onClick={PhotoHandler} className="btn ">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };

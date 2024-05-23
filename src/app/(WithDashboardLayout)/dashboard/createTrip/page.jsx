@@ -36,8 +36,19 @@ const CreateTrip = () => {
 
     const images = await multipleImageHelper(photos);
 
+    if (images?.length < 1) {
+      serLoading(false);
+      return toast.error(
+        "Image problem. Image not uploaded please try again later."
+      );
+    }
+
     if (!photos) {
-      return <div>..loading</div>;
+      return (
+        <div>
+          <Loading />
+        </div>
+      );
     }
 
     const info = {
@@ -55,7 +66,7 @@ const CreateTrip = () => {
     console.log(info, "info");
     const res = await createFunction(info);
 
-    console.log(res, "res");
+    console.log(res, "responce");
 
     if (res?.data.success === true) {
       toast.success(res.data.message);

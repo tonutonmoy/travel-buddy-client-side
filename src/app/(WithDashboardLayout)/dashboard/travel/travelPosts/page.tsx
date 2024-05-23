@@ -20,7 +20,7 @@ const TravelPosts = () => {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
-
+  console.log(data, "ddede");
   if (isLoading) {
     return (
       <div className=" h-screen flex justify-center items-center">

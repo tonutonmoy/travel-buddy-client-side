@@ -27,13 +27,14 @@ const SidebarAllLinks = () => {
               href="/dashboard/travel/travelRequestHistory"
               className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
             >
-              Travel Posts
+              {" "}
+              Travel Request History
             </Link>
             <Link
               href="/dashboard/travel/travelPosts"
               className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
             >
-              Travel Request History
+              Travel Posts
             </Link>
             <a
               href="#"

@@ -35,6 +35,23 @@ export const tripApi = baseApi.injectEndpoints({
         };
       },
     }),
+    updateTrip: build.mutation({
+      query: ({ id, data }) => {
+        return {
+          url: `/trips/update/${id}`,
+          method: "PUT",
+          body: data,
+        };
+      },
+    }),
+    DeleteTrip: build.mutation({
+      query: (id) => {
+        return {
+          url: `/trips/delete/${id}`,
+          method: "Delete",
+        };
+      },
+    }),
   }),
 });
 
@@ -44,4 +61,6 @@ export const {
   useGetTripForFilterQuery,
   useGetSingleTripQuery,
   useGetPostedTripQuery,
+  useDeleteTripMutation,
+  useUpdateTripMutation,
 } = tripApi;
