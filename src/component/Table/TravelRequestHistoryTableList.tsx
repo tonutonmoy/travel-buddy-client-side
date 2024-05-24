@@ -1,24 +1,15 @@
 import React from "react";
 
 const TravelRequestHistoryTableList = ({ item }: any) => {
+  console.log(item, "TravelRequestHistoryTableList");
   return (
     <tr key={item?.id} className="text-gray-700">
-      <td className="px-4 py-3 text-sm border">
-        <img
-          className=" rounded-full h-[50px] w-[50px]"
-          src={item?.photo}
-          alt=""
-        />
-      </td>
-
-      <td className="px-4 py-3 text-sm border">{item?.name}</td>
-      <td className="px-4 py-3 text-sm border">{item?.email}</td>
-      <td className="px-4 py-3 text-sm border">{item?.userStatus}</td>
-      <td className="px-4 py-3 text-sm border">{item?.role}</td>
-
-      <td className="px-4 py-3 text-sm border"></td>
-
-      <td className="px-4 py-3 text-sm border"></td>
+      <td className="px-4 py-3 text-sm border">{item?.trip?.destination}</td>
+      <td className="px-4 py-3 text-sm border">{item?.status}</td>
+      <td className="px-4 py-3 text-sm border">{item?.trip?.startDate}</td>
+      <td className="px-4 py-3 text-sm border">{item?.trip?.endDate}</td>
+      <td className="px-4 py-3 text-sm border">{item?.trip?.location}</td>
+      <td className="px-4 py-3 text-sm border">{item?.trip?.travelType}</td>
     </tr>
   );
 };

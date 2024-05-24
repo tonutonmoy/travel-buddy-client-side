@@ -9,6 +9,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   if (!isLoggedIn()) {
     return router.push("/login");
   }
+  console.log("tonu");
   return (
     <>
       <SideBar>{children}</SideBar>

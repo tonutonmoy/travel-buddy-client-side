@@ -1,14 +1,20 @@
 "use client";
 
 import { useCreateTripMutation } from "@/Redux/api/Trip/tripApi";
+import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
+import { removeFromLocalStorage } from "@/Services/Action/auth.services";
 import Loading from "@/component/Loading/Loading";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 import multipleImageHelper from "@/helper/imageHelper/multipleImageHelper";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
 const CreateTrip = () => {
   const toggle = true;
 
+  const router = useRouter();
+  const { data, isLoading } = useGetProfileQuery("");
   const [endDate, setEndDate] = useState("");
   const [startDate, setStartDate] = useState("");
 
@@ -17,6 +23,14 @@ const CreateTrip = () => {
   const [photos, setPhotos] = useState([]);
 
   const [createFunction] = useCreateTripMutation();
+
+  if (isLoading) {
+    return (
+      <div className="  h-screen flex justify-center items-center">
+        <Loading />
+      </div>
+    );
+  }
 
   const handler = async (e) => {
     e.preventDefault();
@@ -66,17 +80,25 @@ const CreateTrip = () => {
     console.log(info, "info");
     const res = await createFunction(info);
 
-    console.log(res, "responce");
+    console.log(res?.error?.data?.message, res);
 
-    if (res?.data.success === true) {
+    if (res?.data?.success === true) {
       toast.success(res.data.message);
 
       serLoading(false);
     }
-    if (res?.data.success === false) {
+    if (res?.data?.success === false) {
       toast.success(res.data.message);
 
       serLoading(false);
+    }
+    console.log(res);
+    if (res?.error?.data?.message === "Your id is blocked") {
+      removeFromLocalStorage();
+
+      toast.error("Your id is blocked");
+
+      router.push("/login");
     }
   };
 

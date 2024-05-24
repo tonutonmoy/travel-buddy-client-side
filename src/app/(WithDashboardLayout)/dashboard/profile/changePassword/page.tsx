@@ -1,6 +1,7 @@
 "use client";
 import { useChangePasswordMutation } from "@/Redux/api/Auth/authApi";
 import { removeFromLocalStorage } from "@/Services/Action/auth.services";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
@@ -32,6 +33,9 @@ const ChangePassword = () => {
       }
       if (data?.success === false) {
         toast.success(data.message);
+      }
+      if (data?.error?.data?.message === "Your id is blocked") {
+        isBlockHelper(data?.error?.data?.message);
       }
     } catch (error: any) {
       console.log(error, "dd");

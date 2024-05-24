@@ -4,9 +4,10 @@ import Container from "@/component/Container/Container";
 import Loading from "@/component/Loading/Loading";
 import NotFound from "@/component/NotFound/NotFound";
 import TravelPostCard from "@/component/Trip/TravelPostCard";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 
 const TravelPosts = () => {
-  const { data, isLoading, refetch } = useGetPostedTripQuery("", {
+  const { data, isLoading, refetch, error }: any = useGetPostedTripQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
@@ -17,6 +18,9 @@ const TravelPosts = () => {
         <Loading />
       </div>
     );
+  }
+  if (error?.data?.message === "Your id is blocked") {
+    isBlockHelper(error?.data?.message);
   }
 
   console.log(data, "s");

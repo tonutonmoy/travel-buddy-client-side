@@ -8,6 +8,7 @@ const Table = ({
   headers,
   condition,
 }: any) => {
+  console.log(data, "table");
   return (
     <section className="container mx-auto p-6 font-mono">
       <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -24,22 +25,18 @@ const Table = ({
             </thead>
             <tbody>
               {/* Sample data for rows. Replace with your actual data */}
-              {data?.map((item: any) => (
-                <div>
-                  {condition === "userTable" && (
-                    <UserTableList
-                      item={item}
-                      statusHandler={statusHandler}
-                      roleHandler={roleHandler}
-                      key={item?.id}
-                    />
-                  )}
-
-                  {condition === "traveTravelRequestHistory" && (
-                    <TravelRequestHistoryTableList />
-                  )}
-                </div>
-              ))}
+              {data?.map((item: any) =>
+                condition === "userTable" ? (
+                  <UserTableList
+                    item={item}
+                    statusHandler={statusHandler}
+                    roleHandler={roleHandler}
+                    key={item?.id}
+                  />
+                ) : condition === "travelRequestHistory" ? (
+                  <TravelRequestHistoryTableList item={item} key={item?.id} />
+                ) : null
+              )}
             </tbody>
           </table>
         </div>

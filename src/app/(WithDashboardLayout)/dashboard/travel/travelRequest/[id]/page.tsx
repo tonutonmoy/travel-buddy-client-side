@@ -5,6 +5,7 @@ import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 
 import Loading from "@/component/Loading/Loading";
 import TripRequestForm from "@/component/Trip/TripRequestForm";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 
 import React from "react";
 import { toast } from "sonner";
@@ -12,8 +13,8 @@ import { toast } from "sonner";
 const TravelRequest = ({ params }: any) => {
   const { id } = params;
 
-  const [addFunction] = useCreateTravelBuddyRequestMutation();
-  const { data, isLoading } = useGetProfileQuery("");
+  const [addFunction]: any = useCreateTravelBuddyRequestMutation();
+  const { data, isLoading, error }: any = useGetProfileQuery("");
 
   if (isLoading) {
     return (
@@ -23,7 +24,11 @@ const TravelRequest = ({ params }: any) => {
     );
   }
 
-  console.log(data?.data, "dd");
+  if (error?.data?.message === "Your id is blocked") {
+    isBlockHelper(error?.data?.message);
+  }
+
+  console.log(error, "dd");
 
   const handler = async (e: any) => {
     e.preventDefault();
@@ -43,16 +48,21 @@ const TravelRequest = ({ params }: any) => {
       tripId: id,
       userId: data?.data?.id,
     };
+    try {
+      const res = await addFunction(info);
+      console.log(res, "res");
 
-    const res = await addFunction(info);
-
-    console.log(res, "res");
-
-    if (res?.data?.success === true) {
-      toast.success(res.data.message);
-    }
-    if (res?.data?.success === false) {
-      toast.success(res.data.message);
+      if (res?.data?.success === true) {
+        toast.success(res.data.message);
+      }
+      if (res?.error?.data?.success === false) {
+        toast.success(res?.error?.data?.message);
+      }
+      if (res?.error?.data?.message === "Your id is blocked") {
+        isBlockHelper(res?.error?.data?.message);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (

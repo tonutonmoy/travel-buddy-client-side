@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import LoginAndLogout from "../LoginAndLogout/LoginAndLogout";
 import Container from "../Container/Container";
+import NavbarImage from "./NavbarImage";
 
 const Navbar = () => {
   return (
@@ -122,8 +123,7 @@ const Navbar = () => {
           <section className="avatar">
             <div className="w-12 rounded-full">
               <Link href="/dashboard/profile">
-                {" "}
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                <NavbarImage />{" "}
               </Link>
             </div>
           </section>

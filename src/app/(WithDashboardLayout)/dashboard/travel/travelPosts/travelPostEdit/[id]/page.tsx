@@ -3,16 +3,21 @@ import {
   useGetSingleTripQuery,
   useUpdateTripMutation,
 } from "@/Redux/api/Trip/tripApi";
+import { removeFromLocalStorage } from "@/Services/Action/auth.services";
 import Loading from "@/component/Loading/Loading";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const TravelPostEdit = ({ params }: any) => {
   const { id } = params;
+
+  const router = useRouter();
   const toggle = true;
   const [loading, serLoading] = useState(false);
   const { data, isLoading, refetch } = useGetSingleTripQuery(id);
-  const [updateFunction] = useUpdateTripMutation();
+  const [updateFunction]: any = useUpdateTripMutation();
 
   const [destination, setDestination] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -47,17 +52,26 @@ const TravelPostEdit = ({ params }: any) => {
 
     const res = await updateFunction({ id: id, data: info });
 
-    if (res?.data.success === true) {
-      toast.success(res.data.message);
+    if (res?.data?.success === true) {
+      toast.success(res?.data?.message);
 
       refetch();
       serLoading(false);
     }
-    if (res?.data.success === false) {
-      toast.success(res.data.message);
+    if (res?.data?.success === false) {
+      toast.success(res?.data?.message);
 
       serLoading(false);
     }
+    if (res?.error?.data?.message === "Your id is blocked") {
+      removeFromLocalStorage();
+
+      toast.error("Your id is blocked");
+
+      router.push("/login");
+    }
+
+    console.log(res?.error?.data?.message, "res");
   };
   return (
     <div>

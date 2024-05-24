@@ -8,6 +8,7 @@ import {
   getUserInfo,
   removeFromLocalStorage,
 } from "@/Services/Action/auth.services";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 
 import multipleImageHelper from "@/helper/imageHelper/multipleImageHelper";
 import { jwtDecoratedHelper } from "@/helper/jwtHelper/jwtHelper";
@@ -17,10 +18,15 @@ import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const Profile = () => {
-  const { data, refetch } = useGetProfileQuery("", {
+  const { data, refetch, error }: any = useGetProfileQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
+
+  if (error?.data?.message === "Your id is blocked") {
+    isBlockHelper(error?.data?.message);
+  }
+
   const [updateFunction] = useUpdateProfileMutation();
 
   const router = useRouter();

@@ -5,12 +5,14 @@ import {
   useUpdateUserStatusMutation,
 } from "@/Redux/api/UsersManage/usersManageApi";
 import Loading from "@/component/Loading/Loading";
+import NotFound from "@/component/NotFound/NotFound";
 import Table from "@/component/Table/Table";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 import React from "react";
 import { toast } from "sonner";
 
 const ManageUserAccounts = () => {
-  const { data, refetch, isLoading } = useGetAllUsersQuery("");
+  const { data, refetch, isLoading, error }: any = useGetAllUsersQuery("");
   const [updateFunction] = useUpdateUserStatusMutation();
 
   const headers = [
@@ -28,7 +30,9 @@ const ManageUserAccounts = () => {
       <Loading />
     </div>;
   }
-
+  if (error?.data?.message === "Your id is blocked") {
+    isBlockHelper(error?.data?.message);
+  }
   const roleHandler = async (data: string, id: string) => {
     try {
       const updateData = await updateFunction({
@@ -69,13 +73,22 @@ const ManageUserAccounts = () => {
   console.log(data?.data, "d");
   return (
     <div>
-      <Table
-        data={data?.data}
-        roleHandler={roleHandler}
-        statusHandler={statusHandler}
-        headers={headers}
-        condition={"userTable"}
-      />
+      {data?.data?.length > 0 ? (
+        <Table
+          data={data?.data}
+          roleHandler={roleHandler}
+          statusHandler={statusHandler}
+          headers={headers}
+          condition={"userTable"}
+        />
+      ) : (
+        <NotFound
+          title={""}
+          semiTitle=" Data is not available."
+          paragraph=" Sorry, we can't find that data. "
+          button={false}
+        />
+      )}
     </div>
   );
 };

@@ -245,7 +245,8 @@ const Filter = () => {
                   >
                     <option className=" hidden"></option>
                     <option>destination</option>
-                    <option>budget</option>
+                    <option>startDate</option>
+                    <option>endDate</option>
                   </select>
                 </div>
                 {/* sortBy end */}
