@@ -1,16 +1,17 @@
 "use client";
-import { useGetPostedTripQuery } from "@/Redux/api/Trip/tripApi";
+import { useGetTripQuery } from "@/Redux/api/Trip/tripApi";
 import Container from "@/component/Container/Container";
 import Loading from "@/component/Loading/Loading";
 import NotFound from "@/component/NotFound/NotFound";
 import TravelPostCard from "@/component/Trip/TravelPostCard";
+import React from "react";
 
-const TravelPosts = () => {
-  const { data, isLoading, refetch } = useGetPostedTripQuery("", {
+const ManageTravelPosts = () => {
+  const { data, isLoading, refetch } = useGetTripQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
-  console.log(data, "ddede");
+  console.log(data?.data?.data, "ddede");
   if (isLoading) {
     return (
       <div className=" h-screen flex justify-center items-center">
@@ -22,9 +23,9 @@ const TravelPosts = () => {
   console.log(data, "s");
   return (
     <Container>
-      {data?.data?.length > 0 ? (
+      {data?.data?.data?.length > 0 ? (
         <div className=" grid grid-cols-3 gap-10 ">
-          {data?.data?.map((a: any) => (
+          {data?.data?.data?.map((a: any) => (
             <TravelPostCard key={a?.id} data={a} refetch={refetch} />
           ))}
         </div>
@@ -40,4 +41,4 @@ const TravelPosts = () => {
   );
 };
 
-export default TravelPosts;
+export default ManageTravelPosts;

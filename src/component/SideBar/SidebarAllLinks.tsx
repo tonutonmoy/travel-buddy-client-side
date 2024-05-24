@@ -36,12 +36,18 @@ const SidebarAllLinks = () => {
             >
               Travel Posts
             </Link>
-            <a
-              href="#"
+            <Link
+              href="/dashboard/admin/manageUserAccounts"
               className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
             >
-              PRO Account
-            </a>
+              Manage User Accounts
+            </Link>
+            <Link
+              href="/dashboard/admin/manageTravelPosts"
+              className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"
+            >
+              Manage Travel Posts
+            </Link>
           </div>
           <div className="  flex items-center px-10  pt-40 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">
             <LoginAndLogout />

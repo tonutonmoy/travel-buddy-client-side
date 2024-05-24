@@ -13,7 +13,11 @@ const ChangePassword = () => {
 
     const oldPassword = e?.target?.oldPassword?.value;
     const newPassword = e?.target?.newPassword?.value;
-    // Handle form submission logic here
+    const confirmPassword = e?.target?.confirmPassword?.value;
+
+    if (newPassword !== confirmPassword) {
+      return toast.success(" New password and Confirm password not matching");
+    }
 
     try {
       const data = await changePasswordFunction({
@@ -63,6 +67,19 @@ const ChangePassword = () => {
                 type="text"
                 className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                 placeholder="Enter new password"
+                required
+              />
+            </label>
+
+            <label htmlFor="email">
+              <p className="font-medium  text-slate-700 pb-2">
+                Confirm Password
+              </p>
+              <input
+                name="confirmPassword"
+                type="text"
+                className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+                placeholder="Enter confirm password"
                 required
               />
             </label>
