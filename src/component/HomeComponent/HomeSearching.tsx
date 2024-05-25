@@ -31,9 +31,9 @@ const HomeSearching = () => {
     <div>
       <section className="my-10 ">
         {/* searchTram start */}
-        <div className="pt-2 relative mx-auto text-gray-600">
+        <div className="pt-2 relative mx-auto text-gray-600   2xl:px-0">
           <input
-            className="border-2  w-full border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+            className="border-2  w-full  border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
             type="search"
             name="search"
             placeholder="Search"
@@ -41,7 +41,7 @@ const HomeSearching = () => {
           />
           <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
             <svg
-              className="text-gray-600 h-4 w-4 fill-current"
+              className="text-gray-600 h-4 w-4  fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 56.966 56.966"
               width="512px"

@@ -69,7 +69,6 @@ const Filter = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log(data, "abul");
     dispatch(setTripData(data));
   }, [data, limit]);
 

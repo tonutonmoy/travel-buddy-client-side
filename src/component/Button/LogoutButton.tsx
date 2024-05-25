@@ -2,6 +2,7 @@
 
 import { removeFromLocalStorage } from "@/Services/Action/auth.services";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const LogoutButton = () => {
   const router = useRouter();

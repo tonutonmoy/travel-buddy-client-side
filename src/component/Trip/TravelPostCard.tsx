@@ -58,20 +58,21 @@ const TravelPostCard = ({ data, refetch }: any) => {
         </p>
       </div>
 
-      <div className="p-4 border-t mx-8 mt-2 flex gap-10 justify-around items-center">
-        <div>
+      <div className="p-4 border-t  flex mt-2 md:flex lg:flex  xl:flex  2xl:flex gap-10  items-center">
+        <div className=" w-full">
           {" "}
           <Link
             href={`/dashboard/travel/travelPosts/travelPostEdit/${id}`}
-            className="align-middle w-[130px] block select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle w-full block select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none   disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
           >
             Edit
           </Link>
         </div>
-        <div>
+        <div className=" w-full">
           <button
             onClick={deleteHandler}
-            className="align-middle w-[130px] select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className="align-middle block
+              w-full select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
           >
             Delete
           </button>

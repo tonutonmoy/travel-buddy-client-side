@@ -1,13 +1,20 @@
 "use client";
 import { useGetTripQuery } from "@/Redux/api/Trip/tripApi";
+import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 import Container from "@/component/Container/Container";
 import Loading from "@/component/Loading/Loading";
 import NotFound from "@/component/NotFound/NotFound";
 import TravelPostCard from "@/component/Trip/TravelPostCard";
+import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 import React from "react";
 
 const ManageTravelPosts = () => {
-  const { data, isLoading, refetch } = useGetTripQuery("", {
+  const { error }: any = useGetProfileQuery("");
+
+  if (error?.data?.message === "Your id is blocked") {
+    isBlockHelper(error?.data?.message);
+  }
+  const { data, isLoading, refetch }: any = useGetTripQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
@@ -24,7 +31,7 @@ const ManageTravelPosts = () => {
   return (
     <Container>
       {data?.data?.data?.length > 0 ? (
-        <div className=" grid grid-cols-3 gap-10 ">
+        <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 ">
           {data?.data?.data?.map((a: any) => (
             <TravelPostCard key={a?.id} data={a} refetch={refetch} />
           ))}

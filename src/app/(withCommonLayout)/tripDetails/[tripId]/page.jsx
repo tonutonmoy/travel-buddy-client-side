@@ -10,7 +10,7 @@ const tripDetails = ({ params }) => {
   console.log(data, "p");
 
   return (
-    <div className="">
+    <div className=" login-bg-img ">
       <DetailCard data={data} />
     </div>
   );

@@ -4,11 +4,11 @@ import { toast } from "sonner";
 const isBlockHelper = (message: string) => {
   const router = useRouter();
 
-  //   removeFromLocalStorage();
+  removeFromLocalStorage();
 
   toast.error(message);
 
-  //   router.push("/login");
+  router.push("/login");
 };
 
 export default isBlockHelper;

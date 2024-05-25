@@ -66,7 +66,7 @@ const TravelRequest = ({ params }: any) => {
     }
   };
   return (
-    <div>
+    <div className="">
       {" "}
       <TripRequestForm
         email={data?.data?.email}

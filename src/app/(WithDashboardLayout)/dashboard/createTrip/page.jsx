@@ -100,10 +100,14 @@ const CreateTrip = () => {
 
       router.push("/login");
     }
+    if (res?.error?.data?.message === "Unauthorized Access") {
+      toast.error(res?.error?.data?.message);
+      serLoading(false);
+    }
   };
 
   return (
-    <div className=" w-full pb-60  ">
+    <div className=" w-full pb-60   ">
       <h2 className=" text-[30px] font-semibold text-gray-700 text-center my-10 ">
         Create Trip
       </h2>

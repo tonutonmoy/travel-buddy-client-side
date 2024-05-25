@@ -1,18 +1,12 @@
-"use client";
-
-import { isLoggedIn } from "@/Services/Action/auth.services";
+import DashBoardLayout from "@/component/Dashboard/DashBoardLayout";
 import SideBar from "@/component/SideBar/SideBar";
-import { useRouter } from "next/navigation";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  if (!isLoggedIn()) {
-    return router.push("/login");
-  }
-  console.log("tonu");
   return (
     <>
-      <SideBar>{children}</SideBar>
+      <DashBoardLayout>
+        <SideBar>{children}</SideBar>
+      </DashBoardLayout>
     </>
   );
 };

@@ -35,9 +35,9 @@ const Login = () => {
     }
   };
   return (
-    <div className="login-bg-img flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat">
-      <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
-        <div className="text-white">
+    <div className="login-bg-img flex h-screen  w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat">
+      <div className="rounded-xl bg-gray-800  bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-10">
+        <div className="text-white ">
           <div className="mb-8 flex flex-col items-center">
             <h1 className="mb-2 text-2xl">Login</h1>
             <span className="text-gray-300">Enter Login Details</span>

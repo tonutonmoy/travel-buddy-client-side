@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "../Container/Container";
 import NotFound from "../NotFound/NotFound";
 import Pagination from "../Pagination/Pagination";
 import TripCard from "./TripCard";
@@ -11,8 +12,8 @@ const AllTrips = () => {
   console.log(tripData?.data, "trip");
 
   return (
-    <div>
-      <section className=" grid grid-cols-3">
+    <Container>
+      <section className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
         {tripData?.data?.map((a: any) => (
           <TripCard key={a?.id} data={a} />
         ))}
@@ -29,7 +30,7 @@ const AllTrips = () => {
           />
         )}
       </section>
-    </div>
+    </Container>
   );
 };
 

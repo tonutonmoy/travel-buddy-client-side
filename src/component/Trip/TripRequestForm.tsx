@@ -12,7 +12,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
   const toggle = true;
   return (
     <Container>
-      <div className=" grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 my-10">
+      <div className=" grid gap-10  grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 my-10">
         <div>
           <h1 className=" text-[25px]  font-semibold text-center mb-5 mt-20">
             Terms and conditions
@@ -72,7 +72,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
             }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
           >
             <section
-              className=" grid md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2  gap-0 md:gap-0 lg:gap-5 xl:gap-10 2xl:gap-10
+              className=" grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2  gap-0 md:gap-0 lg:gap-5 xl:gap-10 2xl:gap-10
           
           xl:px-10 2xl:px-10"
             >
