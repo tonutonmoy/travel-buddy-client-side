@@ -4,7 +4,7 @@ import LoginAndLogout from "../LoginAndLogout/LoginAndLogout";
 import { getUserInfo } from "@/Services/Action/auth.services";
 
 const NavbarListForSmallDevice = () => {
-  const token = "";
+  const token = getUserInfo();
   return (
     <ul
       tabIndex={0}

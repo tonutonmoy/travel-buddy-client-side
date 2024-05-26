@@ -20,6 +20,12 @@ export const tripApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getTripForAdmin: build.query({
+      query: () => ({
+        url: `/tripsForAdmin`,
+        method: "GET",
+      }),
+    }),
     getSingleTrip: build.query({
       query: (id) => ({
         url: `/trips/${id}`,
@@ -63,4 +69,5 @@ export const {
   useGetPostedTripQuery,
   useDeleteTripMutation,
   useUpdateTripMutation,
+  useGetTripForAdminQuery,
 } = tripApi;

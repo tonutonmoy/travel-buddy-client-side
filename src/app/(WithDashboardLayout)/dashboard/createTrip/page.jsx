@@ -177,10 +177,10 @@ const CreateTrip = () => {
           </div>
           <div className=" text-center my-5">
             <p className=" text-[18px] font-[500] "> Itinerary</p>
-            <input
+            <textarea
               type="text"
               placeholder="itinerary"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+              className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-500 "
               name="itinerary"
               required
             />

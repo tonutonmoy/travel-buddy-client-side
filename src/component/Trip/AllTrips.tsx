@@ -13,7 +13,7 @@ const AllTrips = () => {
 
   return (
     <Container>
-      <section className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+      <section className=" grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10">
         {tripData?.data?.map((a: any) => (
           <TripCard key={a?.id} data={a} />
         ))}
