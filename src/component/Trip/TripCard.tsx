@@ -13,7 +13,7 @@ const TripCard = ({ data }: any) => {
     travelType,
   } = data;
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg my-20">
+    <div className="max-w-sm rounded overflow-hidden  my-20 bg-white shadow-xl ">
       <figure>
         {" "}
         <img className=" h-[300px] w-full" src={photos?.[0]} alt="Mountain" />
@@ -37,7 +37,7 @@ const TripCard = ({ data }: any) => {
         </p>
         <p className="text-gray-500">
           <span className=" font-medium text-black">Description:</span>{" "}
-          {description}{" "}
+          {description?.slice(0, 132)}...
         </p>
       </div>
 

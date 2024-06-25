@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gray-900 text-base-content">
+    <footer className=" bg-gradient-to-r from-blue-500 to-blue-400 text-base-content">
       <Container>
-        <section className="footer bg-gray-900 p-10  text-gray-300 ">
+        <section className="footer   p-10  text-gray-100 ">
           <aside>
             <p className="font-semibold text-2xl">
               Travel-Buddy
@@ -15,27 +15,27 @@ const Footer = () => {
             <p>Providing reliable tech since 2024</p>
           </aside>
           <nav>
-            <h6 className=" text-lg font-semibold text-gray-500">Services</h6>
+            <h6 className=" text-lg font-semibold text-gray-100">Services</h6>
             <a className="link link-hover">Branding</a>
             <a className="link link-hover">Design</a>
             <a className="link link-hover">Marketing</a>
             <a className="link link-hover">Advertisement</a>
           </nav>
-          <nav>
-            <h6 className="footer-title">Company</h6>
+          <nav className=" text-gray-100">
+            <h6 className=" text-lg font-semibold text-gray-100">Company</h6>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Jobs</a>
             <a className="link link-hover">Press kit</a>
           </nav>
           <nav>
-            <h6 className="footer-title">Legal</h6>
+            <h6 className=" text-lg font-semibold text-gray-100">Legal</h6>
             <a className="link link-hover">Terms of use</a>
             <a className="link link-hover">Privacy policy</a>
             <a className="link link-hover">Cookie policy</a>
           </nav>
           <nav>
-            <h6 className="footer-title">Contact</h6>
+            <h6 className=" text-lg font-semibold text-gray-100">Contact</h6>
             <p>Email: www.tonutonmoy12@gmail.com</p>
             <p>Phone: +8801732159683</p>
             <div className="flex space-x-4">
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
           </nav>
         </section>
-        <section className="footer footer-center p-4  bg-gray-900   text-gray-200  ">
+        <section className="footer footer-center p-4   text-gray-200  ">
           <aside className="my-10">
             <p>&copy; 2024 - All rights reserved by Travel-Buddy Ltd</p>
           </aside>

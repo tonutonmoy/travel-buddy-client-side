@@ -67,7 +67,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
         <div>
           <form
             onSubmit={handler}
-            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10  ${
+            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10 shadow-lg  ${
               toggle && " border-[1px] "
             }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
           >
@@ -138,7 +138,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 disabled={!isChecked}
                 className={`w-1/2 block ${
                   !isChecked && " opacity-[0.5]"
-                } mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2`}
+                } mx-auto rounded-full bg-gradient-to-r from-blue-500 to-blue-400 hover:shadow-lg font-semibold text-white px-6 py-2`}
               >
                 Submit
               </button>

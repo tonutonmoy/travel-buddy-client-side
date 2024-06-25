@@ -5,7 +5,6 @@ import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 import Link from "next/link";
 
 const DetailCard = ({ data }: any) => {
-  console.log(data?.data, "dd");
   const { data: userData, isLoading } = useGetProfileQuery("");
 
   const {
@@ -22,7 +21,7 @@ const DetailCard = ({ data }: any) => {
 
   return (
     <section>
-      <div className=" flex justify-center  items-center rounded-full py-20">
+      <div className=" flex justify-center  items-center rounded-full py-20 ">
         <div className="card grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 lg:card-side w-[90%] md:w-[70%] lg:w-[90%] xl:w-[70%] 2xl:w-[50%]  bg-base-100 shadow-xl">
           <div>
             {" "}
@@ -30,7 +29,7 @@ const DetailCard = ({ data }: any) => {
               <SliderCard images={photos} />
             </figure>
           </div>
-          <div className="card-body ">
+          <div className="card-body bg-white shadow-lg ">
             <div className=" space-y-5  py-5">
               <p className="text-gray-500">
                 <span className=" font-medium text-black">Travel type:</span>{" "}
@@ -64,7 +63,7 @@ const DetailCard = ({ data }: any) => {
               ) : (
                 <Link
                   href={`/dashboard/travel/travelRequest/${id}`}
-                  className="w-[170px] block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2"
+                  className="w-[170px] block mx-auto rounded-full  bg-gradient-to-r from-blue-500 to-blue-400  hover:shadow-lg font-semibold text-white px-6 py-2"
                 >
                   {" "}
                   Travel Request

@@ -310,7 +310,7 @@ const Filter = () => {
               {/* Price end */}
 
               <div className="mt-6 grid w-full  md:w-[100px] lg:w-[100px] xl:w-[100px] 2xl:w-[100px] grid-cols-2 justify-end space-x-4 md:flex">
-                <button className="rounded-lg bg-red-500 text-white px-8 py-2 font-medium  outline-none hover:opacity-80 focus:ring">
+                <button className="w-[150px] block mx-auto rounded-full  bg-gradient-to-r from-red-500 to-red-500  hover:shadow-lg font-semibold text-white px-6 py-2">
                   Reset
                 </button>
               </div>

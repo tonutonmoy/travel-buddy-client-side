@@ -1,9 +1,8 @@
 import React from "react";
 
 const TravelRequestHistoryTableList = ({ item }: any) => {
-  console.log(item, "TravelRequestHistoryTableList");
   return (
-    <tr key={item?.id} className="text-gray-700">
+    <tr key={item?.id} className="text-gray-700 bg-white">
       <td className="px-4 py-3 text-sm border">{item?.trip?.destination}</td>
       <td className="px-4 py-3 text-sm border">{item?.status}</td>
       <td className="px-4 py-3 text-sm border">{item?.trip?.startDate}</td>

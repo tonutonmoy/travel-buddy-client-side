@@ -114,7 +114,7 @@ const CreateTrip = () => {
 
       <form
         onSubmit={handler}
-        className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10  ${
+        className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10   bg-white shadow-lg  ${
           toggle && " border-[1px] "
         }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
       >
@@ -206,7 +206,7 @@ const CreateTrip = () => {
             <input
               onChange={(e) => setPhotos(Array.from(e.target.files))}
               type="file"
-              className="file-input w-full max-w-xs my-3"
+              className="file-input w-full max-w-xs my-3 "
               multiple // Add the "multiple" attribute here
             />
           </div>
@@ -216,7 +216,7 @@ const CreateTrip = () => {
           {loading ? (
             <Loading />
           ) : (
-            <button className="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+            <button className="w-full md:w-[30%] mx-auto  flex justify-center bg-gradient-to-r from-blue-500 to-blue-400 hover:shadow-lg text-gray-100  rounded-full tracking-wide font-semibold shadow-lg cursor-pointer transition ease-in duration-500 py-2 px-5">
               Submit
             </button>
           )}

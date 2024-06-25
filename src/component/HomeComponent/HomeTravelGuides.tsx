@@ -25,9 +25,9 @@ const HomeTravelGuides = () => {
   ];
 
   return (
-    <section className="bg-gray-900 text-white py-12 my-20">
+    <section className="bg-gradient-to-r from-gray-900 to-blue-400 text-white py-12 my-20 rounded-lg">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-8">
+        <h2 className="text-3xl font-semibold text-center mb-8 text-white">
           Travel Tips and Guides
         </h2>
         <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6">

@@ -2,7 +2,7 @@ import React from "react";
 
 const UserTableList = ({ item, statusHandler, roleHandler }: any) => {
   return (
-    <tr key={item?.id} className="text-gray-700">
+    <tr key={item?.id} className="text-gray-700 bg-white">
       <td className="px-4 py-3 text-sm border">
         <img
           className=" rounded-full h-[50px] w-[50px]"
@@ -19,7 +19,7 @@ const UserTableList = ({ item, statusHandler, roleHandler }: any) => {
       <td className="px-4 py-3 text-sm border">
         <span
           onClick={(e: any) => statusHandler(e.target.innerText, item?.id)}
-          className={` cursor-pointer align-middle select-none font-sans font-bold text-center  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none`}
+          className="w-[150px]  cursor-pointer text-center block mx-auto rounded-full  bg-gradient-to-r from-red-500 to-red-500  hover:shadow-lg font-semibold text-white px-6 py-2"
         >
           {item?.userStatus === "Activate" ? "Deactivate" : "Activate"}
         </span>
@@ -28,7 +28,7 @@ const UserTableList = ({ item, statusHandler, roleHandler }: any) => {
       <td className="px-4 py-3 text-sm border">
         <span
           onClick={(e: any) => roleHandler(e.target.innerText, item?.id)}
-          className={` cursor-pointer align-middle select-none font-sans font-bold text-center  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg  hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none`}
+          className="w-[150px] cursor-pointer text-center block mx-auto rounded-full  bg-gradient-to-r from-blue-500 to-blue-400  hover:shadow-lg font-semibold text-white px-6 py-2"
         >
           {item?.role === "Admin" ? "User" : "Admin"}
         </span>

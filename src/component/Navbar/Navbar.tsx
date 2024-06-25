@@ -5,12 +5,13 @@ import Container from "../Container/Container";
 import NavbarImage from "./NavbarImage";
 import NavbarList from "./NavbarList";
 import NavbarListForSmallDevice from "./NavbarListForSmallDevice";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-900 text-gray-100">
+    <nav className="bg-gradient-to-r from-blue-500 to-blue-400  text-gray-100  z-50 w-full fixed  ">
       <Container>
-        <div className="navbar bg-gray-900 p-0">
+        <div className="navbar   p-0    ">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -35,8 +36,15 @@ const Navbar = () => {
               </div>
               <NavbarListForSmallDevice />
             </div>
-            <Link href="/" className="font-semibold text-xl">
-              Travel-Buddy
+            <Link href="/" className="font-semibold text-xl flex items-center">
+              {/* Travel-Buddy */}
+              <Image
+                src="/logo/logo.png" // Correctly reference the image path
+                alt="logo"
+                width={170}
+                height={20}
+                className="py-2 "
+              />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

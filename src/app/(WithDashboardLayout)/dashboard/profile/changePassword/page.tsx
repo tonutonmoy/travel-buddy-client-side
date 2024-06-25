@@ -90,7 +90,7 @@ const ChangePassword = () => {
 
             <button
               type="submit"
-              className="w-full py-3 font-medium   text-white bg-gray-900 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+              className="w-full py-3 font-medium   text-white bg-gradient-to-r from-blue-500 to-blue-400  rounded-full border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

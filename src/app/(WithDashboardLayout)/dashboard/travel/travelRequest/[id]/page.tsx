@@ -28,8 +28,6 @@ const TravelRequest = ({ params }: any) => {
     isBlockHelper(error?.data?.message);
   }
 
-  console.log(error, "dd");
-
   const handler = async (e: any) => {
     e.preventDefault();
 

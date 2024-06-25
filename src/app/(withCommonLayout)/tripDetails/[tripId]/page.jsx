@@ -7,10 +7,8 @@ import React from "react";
 const tripDetails = ({ params }) => {
   const { data } = useGetSingleTripQuery(params?.tripId);
 
-  console.log(data, "p");
-
   return (
-    <div className=" login-bg-img ">
+    <div className=" ">
       <DetailCard data={data} />
     </div>
   );

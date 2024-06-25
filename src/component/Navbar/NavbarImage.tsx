@@ -5,13 +5,14 @@ import { getUserInfo } from "@/Services/Action/auth.services";
 
 const NavbarImage = () => {
   const token = getUserInfo();
-  const { data, isLoading } = useGetProfileQuery("");
+  const { data, isLoading } = useGetProfileQuery("", {
+    pollingInterval: 0,
+    refetchOnMountOrArgChange: true,
+  });
 
   if (isLoading) {
     return "";
   }
-
-  console.log();
 
   return (
     <div>

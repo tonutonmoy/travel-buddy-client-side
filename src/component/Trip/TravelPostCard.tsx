@@ -63,7 +63,7 @@ const TravelPostCard = ({ data, refetch }: any) => {
           {" "}
           <Link
             href={`/dashboard/travel/travelPosts/travelPostEdit/${id}`}
-            className="align-middle w-full block select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none   disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className=" w-full text-center block mx-auto rounded-full  bg-gradient-to-r from-blue-500 to-blue-400  hover:shadow-lg font-semibold text-white px-6 py-2"
           >
             Edit
           </Link>
@@ -71,8 +71,7 @@ const TravelPostCard = ({ data, refetch }: any) => {
         <div className=" w-full">
           <button
             onClick={deleteHandler}
-            className="align-middle block
-              w-full select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+            className=" w-full text-center block mx-auto rounded-full  bg-gradient-to-r from-red-500 to-red-500  hover:shadow-lg font-semibold text-white px-6 py-2"
           >
             Delete
           </button>

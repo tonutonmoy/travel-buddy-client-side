@@ -8,8 +8,8 @@ const HomeFeaturedDestinations = () => {
     AOS.init(); // Initialize AOS with options
   }, []);
   return (
-    <div className=" bg-gray-900  md:px-20 md:py-20 lg:px-20 lg:py-20 xl:px-40 xl:py-20 2xl:px-40 2xl:py-20 rounded-lg my-40 overflow-hidden">
-      <div className="p-6 bg-red-500 rounded-[1000%] text-white ">
+    <div className=" bg-gradient-to-r from-gray-900 to-blue-500 md:px-20 md:py-20 lg:px-20 lg:py-20 xl:px-40 xl:py-20 2xl:px-40 2xl:py-20 rounded-lg my-40 overflow-hidden">
+      <div className="p-6 bg-gradient-to-r from-blue-500 to-blue-400  rounded-[1000%] text-white ">
         <h1 className="text-3xl font-bold mb-4">Welcome to Travel Buddy</h1>
 
         <section className="mb-8 text-gray-800 ">

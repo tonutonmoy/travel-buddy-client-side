@@ -75,8 +75,6 @@ const Profile = () => {
             toast.success("Please login agin ");
           }, 2000);
         }
-
-        console.log(updateData, "l");
       }
     } catch (error: any) {
       console.log(error);
@@ -110,8 +108,8 @@ const Profile = () => {
     }
   };
   return (
-    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28 login-bg-img   text-[#161931] flex flex-col items-center justify-center ">
-      <section className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4 flex flex-col items-center justify-center ">
+    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28   text-[#161931] flex flex-col items-center justify-center ">
+      <section className="w-full min-h-screen py-1 flex flex-col items-center justify-center ">
         <div className="p-2 md:p-4 flex flex-col items-center justify-center  ">
           <div className="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg  ">
             <div className="grid max-w-2xl mx-auto mt-8">
@@ -123,14 +121,14 @@ const Profile = () => {
                 />
                 <div className="flex flex-col space-y-5 sm:ml-8">
                   <button
-                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none bg-[#202142] rounded-lg border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200"
+                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none  bg-gradient-to-r from-blue-500 to-blue-400  border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200 rounded-full"
                     onClick={() => setModal(true)}
                   >
                     Change picture
                   </button>
                   <Link
                     href={"/dashboard/profile/changePassword"}
-                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none bg-gray-500  rounded-lg border border-indigo-200 hover:bg-gray-700  focus:z-10 focus:ring-4 focus:ring-indigo-200"
+                    className="py-3.5 px-7 text-base font-medium text-white focus:outline-none  bg-gradient-to-r from-red-500 to-red-500  rounded-full border border-indigo-200 hover:bg-gray-700  focus:z-10 focus:ring-4 focus:ring-indigo-200"
                   >
                     Change Password
                   </Link>
@@ -209,7 +207,7 @@ const Profile = () => {
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    className="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                    className=" block  rounded-full  bg-gradient-to-r from-blue-500 to-blue-400  hover:shadow-lg font-semibold text-white px-6 py-2"
                   >
                     Save
                   </button>
@@ -222,26 +220,33 @@ const Profile = () => {
 
       {/* Open the modal using document.getElementById('ID').showModal() method */}
 
-      <dialog className={`${modal ? "block" : "hidden"}   bg-gray-900 p-10`}>
-        <div className=" bg-gray-900">
-          <div className="bg-gray-900">
+      <dialog
+        className={`${
+          modal ? "block" : "hidden"
+        }    bg-white p-10 shadow-lg rounded-md`}
+      >
+        <div className=" bg-white ">
+          <div className="bg-white ">
             <div className=" ">
               <div className=" flex justify-center">
                 <input
                   onChange={(e) => setPhoto(Array.from(e.target.files as any))}
                   type="file"
-                  className="file-input w-full max-w-xs my-3  block "
+                  className="file-input w-full max-w-xs my-3  block  border-[1px] border-gray-700"
                 />
               </div>
               <div className=" flex justify-between mt-10">
                 <button
                   onClick={() => setModal(false)}
-                  className="btn text-white bg-red-500"
+                  className=" block  rounded-full  bg-gradient-to-r from-red-500 to-red-500  hover:shadow-lg font-semibold text-white px-6 py-2"
                 >
                   Close
                 </button>
 
-                <button onClick={PhotoHandler} className="btn ">
+                <button
+                  onClick={PhotoHandler}
+                  className=" block  rounded-full  bg-gradient-to-r from-blue-500 to-blue-400  hover:shadow-lg font-semibold text-white px-6 py-2"
+                >
                   Submit
                 </button>
               </div>

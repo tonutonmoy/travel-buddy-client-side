@@ -50,7 +50,6 @@ const TravelRequestHistory = () => {
     isBlockHelper(error?.data?.message);
   }
 
-  console.log(data?.data, "d");
   return (
     <Container>
       {data?.data?.length > 0 ? (
