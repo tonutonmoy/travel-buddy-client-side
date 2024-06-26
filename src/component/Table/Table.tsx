@@ -15,7 +15,7 @@ const Table = ({
         <div className="w-full overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="text-md font-semibold tracking-wide text-left text-gray-100 bg-gradient-to-r from-blue-500 to-blue-400 uppercase border-b border-gray-600">
+              <tr className="text-md font-semibold tracking-wide text-left text-gray-50 bg-gradient-to-r from-blue-500/50 to-blue-400/50 uppercase border-b border-gray-600">
                 {headers?.map((a: string, index: number) => (
                   <th key={index} className="px-4 py-3">
                     {a}

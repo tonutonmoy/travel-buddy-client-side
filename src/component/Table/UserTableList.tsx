@@ -2,7 +2,7 @@ import React from "react";
 
 const UserTableList = ({ item, statusHandler, roleHandler }: any) => {
   return (
-    <tr key={item?.id} className="text-gray-700 bg-white">
+    <tr key={item?.id} className="text-gray-50 ">
       <td className="px-4 py-3 text-sm border">
         <img
           className=" rounded-full h-[50px] w-[50px]"

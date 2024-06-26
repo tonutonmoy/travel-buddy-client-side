@@ -1,41 +1,54 @@
 import React from "react";
 import Container from "../Container/Container";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gradient-to-r from-blue-500 to-blue-400 text-base-content">
+    <footer className=" bg-gradient-to-r from-blue-500/30 to-blue-400/30 text-base-content ">
       <Container>
-        <section className="footer   p-10  text-gray-100 ">
+        <section className="  grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 gap-10 md:gap-20 lg:gap-20   xl:gap-10  2xl:gap-10     p-10  text-gray-100 ">
           <aside>
-            <p className="font-semibold text-2xl">
-              Travel-Buddy
+            <p className="font-semibold text-2xl ">
+              <Image
+                src="/logo/logo.png" // Correctly reference the image path
+                alt="logo"
+                width={170}
+                height={20}
+                className="  "
+              />
               <br />
             </p>
             <p>Providing reliable tech since 2024</p>
           </aside>
-          <nav>
-            <h6 className=" text-lg font-semibold text-gray-100">Services</h6>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+          <nav className=" space-y-1 text-gray-100">
+            <h6 className=" text-lg font-semibold text-gray-100 mb-5">
+              Services
+            </h6>
+            <a className="link link-hover block">Branding</a>
+            <a className="link link-hover block">Design</a>
+            <a className="link link-hover block">Marketing</a>
+            <a className="link link-hover block">Advertisement</a>
           </nav>
-          <nav className=" text-gray-100">
-            <h6 className=" text-lg font-semibold text-gray-100">Company</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+          <nav className=" space-y-1 text-gray-100">
+            <h6 className=" text-lg font-semibold text-gray-100 mb-5">
+              Company
+            </h6>
+            <a className="link link-hover block">About us</a>
+            <a className="link link-hover block">Contact</a>
+            <a className="link link-hover block">Jobs</a>
+            <a className="link link-hover block">Press kit</a>
           </nav>
-          <nav>
-            <h6 className=" text-lg font-semibold text-gray-100">Legal</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
+          <nav className=" space-y-1 text-gray-100">
+            <h6 className=" text-lg font-semibold text-gray-100 mb-5">Legal</h6>
+            <a className="link link-hover block">Terms of use</a>
+            <a className="link link-hover block">Privacy policy</a>
+            <a className="link link-hover block">Cookie policy</a>
           </nav>
-          <nav>
-            <h6 className=" text-lg font-semibold text-gray-100">Contact</h6>
+          <nav className=" space-y-1 text-gray-100">
+            <h6 className=" text-lg font-semibold text-gray-100 mb-5">
+              Contact
+            </h6>
             <p>Email: www.tonutonmoy12@gmail.com</p>
             <p>Phone: +8801732159683</p>
             <div className="flex space-x-4">

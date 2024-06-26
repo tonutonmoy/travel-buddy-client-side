@@ -26,6 +26,11 @@ const HomeTravelGuides = () => {
 
   return (
     <section className="bg-gradient-to-r from-gray-900 to-blue-400 text-white py-12 my-20 rounded-lg">
+      <div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+      </div>
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-8 text-white">
           Travel Tips and Guides

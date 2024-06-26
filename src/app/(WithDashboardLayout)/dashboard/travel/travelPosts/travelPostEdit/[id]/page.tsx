@@ -77,13 +77,13 @@ const TravelPostEdit = ({ params }: any) => {
     <div>
       <div>
         <div className=" w-full pb-60  ">
-          <h2 className=" text-[30px] font-semibold text-gray-700 text-center my-10 ">
+          <h2 className=" text-[30px] font-semibold text-gray-50 text-center my-10 ">
             Edit Trip
           </h2>
 
           <form
             onSubmit={handler}
-            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10  bg-white shadow-lg  ${
+            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10  text-gray-50 bg-gradient-to-r from-blue-500/20 to-blue-400/20  shadow-lg ${
               toggle && " border-[1px] "
             }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
           >
@@ -100,7 +100,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <input
                   type="text"
                   placeholder="destination"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700 "
                   onChange={(date) => setDestination(date.target.value)}
                   value={destination}
                 />
@@ -110,7 +110,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <p className=" text-[18px] font-[500] "> Start date</p>
                 <input
                   type="date"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
                   required
                   onChange={(date) => setStartDate(date.target.value)}
                   value={startDate}
@@ -120,7 +120,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <p className=" text-[18px] font-[500] "> End date</p>
                 <input
                   type="date"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
                   onChange={(date) => setEndDate(date.target.value)}
                   value={endDate}
                 />
@@ -130,7 +130,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <p className=" text-[18px] font-[500] "> Travel type</p>
                 <input
                   type="text"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
                   onChange={(date) => setTravelType(date.target.value)}
                   value={travelType}
                 />
@@ -141,7 +141,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <input
                   type="text"
                   placeholder="location"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700 "
                   onChange={(date) => setLocation(date.target.value)}
                   value={location}
                 />
@@ -150,7 +150,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <p className=" text-[18px] font-[500] "> Itinerary</p>
                 <textarea
                   placeholder="itinerary"
-                  className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-700 "
                   onChange={(date) => setItinerary(date.target.value)}
                   value={itinerary}
                 />
@@ -160,7 +160,7 @@ const TravelPostEdit = ({ params }: any) => {
                 <p className=" text-[18px] font-[500] "> Description</p>
                 <textarea
                   placeholder=" description"
-                  className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-700 "
                   onChange={(date) => setDescription(date.target.value)}
                   value={description}
                 />

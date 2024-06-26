@@ -108,11 +108,11 @@ const Profile = () => {
     }
   };
   return (
-    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28   text-[#161931] flex flex-col items-center justify-center ">
-      <section className="w-full min-h-screen py-1 flex flex-col items-center justify-center ">
-        <div className="p-2 md:p-4 flex flex-col items-center justify-center  ">
+    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28   text-[#161931] flex flex-col items-center justify-center  overflow-hidden">
+      <section className="w-full min-h-screen py-1 flex flex-col items-center justify-center   ">
+        <div className="p-2 md:p-4 flex flex-col items-center justify-center  rounded-xl shadow-md   bg-gradient-to-r from-blue-500/30 to-blue-400/30 shadow-gray-100">
           <div className="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg  ">
-            <div className="grid max-w-2xl mx-auto mt-8">
+            <div className="grid max-w-2xl mx-auto mt-8 ">
               <div className="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
                 <img
                   className="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-indigo-500"
@@ -136,20 +136,20 @@ const Profile = () => {
               </div>
               <form
                 onSubmit={handler}
-                className="items-center mt-8 sm:mt-14 text-[#202142]"
+                className="items-center mt-8 sm:mt-14 text-[#202142] "
               >
                 <div className="flex flex-col items-center w-full mb-2 space-x-0 space-y-2 sm:flex-row sm:space-x-4 sm:space-y-0 sm:mb-6">
                   <div className="w-full">
                     <label
                       htmlFor="first_name"
-                      className="block mb-2 text-sm font-medium text-white  dark:text-white"
+                      className="block mb-2 text-sm font-medium text-gray-50 dark:text-white"
                     >
                       Your name
                     </label>
                     <input
                       type="text"
                       id="first_name"
-                      className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+                      className="bg-indigo-50 border border-indigo-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
                       placeholder="Your first name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
@@ -158,14 +158,14 @@ const Profile = () => {
                   <div className="w-full">
                     <label
                       htmlFor="last_name"
-                      className="block mb-2 text-sm font-medium text-white  dark:text-white"
+                      className="block mb-2 text-sm font-medium  text-gray-50 dark:text-white"
                     >
                       Your age
                     </label>
                     <input
                       type="text"
                       id="last_name"
-                      className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+                      className="bg-indigo-50 border border-indigo-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
                       placeholder="Your last name"
                       value={age}
                       onChange={(e) => setAge(e.target.value)}
@@ -175,14 +175,14 @@ const Profile = () => {
                 <div className="mb-2 sm:mb-6">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-white  dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-50  dark:text-white"
                   >
                     Your email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+                    className="bg-indigo-50 border border-indigo-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
                     placeholder="your.email@mail.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -192,13 +192,13 @@ const Profile = () => {
                 <div className="mb-6">
                   <label
                     htmlFor="message"
-                    className="block mb-2 text-sm font-medium text-white  dark:text-white"
+                    className="block mb-2 text-sm font-medium  text-gray-50  dark:text-white"
                   >
                     Bio
                   </label>
                   <textarea
                     id="message"
-                    className="block p-2.5 w-full text-sm text-indigo-900 bg-indigo-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block p-2.5 w-full text-sm text-gray-900 bg-indigo-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="Write your bio here..."
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
@@ -223,10 +223,10 @@ const Profile = () => {
       <dialog
         className={`${
           modal ? "block" : "hidden"
-        }    bg-white p-10 shadow-lg rounded-md`}
+        }    bg-gradient-to-r from-blue-500/10 to-blue-400/10 p-10 shadow-lg rounded-md`}
       >
-        <div className=" bg-white ">
-          <div className="bg-white ">
+        <div className="  ">
+          <div className=" ">
             <div className=" ">
               <div className=" flex justify-center">
                 <input

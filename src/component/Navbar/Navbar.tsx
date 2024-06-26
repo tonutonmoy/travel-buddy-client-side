@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-blue-400  text-gray-100  z-50 w-full fixed  ">
+    <nav className="bg-gradient-to-r from-blue-500/30 to-blue-400/30  text-gray-100  z-50 w-full fixed   ">
       <Container>
         <div className="navbar   p-0    ">
           <div className="navbar-start">
@@ -43,7 +43,7 @@ const Navbar = () => {
                 alt="logo"
                 width={170}
                 height={20}
-                className="py-2 "
+                className="py-2  "
               />
             </Link>
           </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end gap-10">
             <section className="avatar">
-              <div className="w-12 rounded-full">
+              <div className="w-12 rounded-full ">
                 <Link href="/dashboard/profile">
                   <NavbarImage />
                 </Link>

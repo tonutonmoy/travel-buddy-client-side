@@ -13,30 +13,27 @@ const TripCard = ({ data }: any) => {
     travelType,
   } = data;
   return (
-    <div className="max-w-sm rounded overflow-hidden  my-20 bg-white shadow-xl ">
+    <div className="max-w-sm  overflow-hidden  my-20 text-gray-50 shadow-xl bg-gradient-to-r from-blue-500/20 to-blue-400/20 rounded  ">
       <figure>
         {" "}
         <img className=" h-[300px] w-full" src={photos?.[0]} alt="Mountain" />
       </figure>
 
-      <div className=" space-y-1 px-10 py-5">
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">Destination:</span>{" "}
-          {destination}{" "}
+      <div className=" space-y-1 px-10 py-5 text-w">
+        <p className="">
+          <span className=" font-medium ">Destination:</span> {destination}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">startDate:</span>{" "}
-          {startDate}{" "}
+        <p className="">
+          <span className=" font-medium ">startDate:</span> {startDate}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">endDate:</span> {endDate}{" "}
+        <p className="">
+          <span className=" font-medium ">endDate:</span> {endDate}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">Travel type:</span>{" "}
-          {travelType}{" "}
+        <p className="">
+          <span className=" font-medium ">Travel type:</span> {travelType}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">Description:</span>{" "}
+        <p className="">
+          <span className=" font-medium ">Description:</span>{" "}
           {description?.slice(0, 132)}...
         </p>
       </div>

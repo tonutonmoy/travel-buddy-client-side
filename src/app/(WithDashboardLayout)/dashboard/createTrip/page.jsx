@@ -108,13 +108,13 @@ const CreateTrip = () => {
 
   return (
     <div className=" w-full pb-60   ">
-      <h2 className=" text-[30px] font-semibold text-gray-700 text-center my-10 ">
+      <h2 className=" text-[30px] font-semibold text-gray-50 text-center my-10 ">
         Create Trip
       </h2>
 
       <form
         onSubmit={handler}
-        className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10   bg-white shadow-lg  ${
+        className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10  text-gray-50 bg-gradient-to-r from-blue-500/20 to-blue-400/20  shadow-lg  ${
           toggle && " border-[1px] "
         }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
       >
@@ -124,7 +124,7 @@ const CreateTrip = () => {
             <input
               type="text"
               placeholder="destination"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700 "
               name="destination"
               required
             />
@@ -134,7 +134,7 @@ const CreateTrip = () => {
             <p className=" text-[18px] font-[500] "> Start date</p>
             <input
               type="date"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
               required
               onChange={(date) => setStartDate(date.target.value)}
             />
@@ -143,7 +143,7 @@ const CreateTrip = () => {
             <p className=" text-[18px] font-[500] "> End date</p>
             <input
               type="date"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
               required
               onChange={(date) => setEndDate(date.target.value)}
             />
@@ -154,7 +154,7 @@ const CreateTrip = () => {
             <select
               type="text"
               placeholder="travel type"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500"
+              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700"
               name="travelType"
               required
             >
@@ -170,7 +170,7 @@ const CreateTrip = () => {
             <input
               type="text"
               placeholder="location"
-              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+              className="input input-bordered input-md w-full max-w-xs my-3 text-gray-700 "
               name="location"
               required
             />
@@ -180,7 +180,7 @@ const CreateTrip = () => {
             <textarea
               type="text"
               placeholder="itinerary"
-              className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-500 "
+              className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-700 "
               name="itinerary"
               required
             />
@@ -191,7 +191,7 @@ const CreateTrip = () => {
             <textarea
               type="text"
               placeholder=" description"
-              className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-500 "
+              className="input input-bordered input-md w-full h-[100px] max-w-xs my-3 text-gray-700 "
               name="description"
               required
             />

@@ -88,10 +88,10 @@ const Filter = () => {
   const uniqueDestination = destinationHelper(getFilterData);
 
   return (
-    <div className=" mb-20 mt-10">
+    <div className=" mb-20 mt-40">
       <div className="">
         <div className="flex flex-col">
-          <div className="rounded-xl border border-gray-200  bg-white p-6 shadow-lg">
+          <div className="rounded-xl border border-gray-200   p-6 shadow-lg">
             <form className="">
               <section className="my-10">
                 {/* searchTram start */}
@@ -126,7 +126,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50 mb-2"
                   >
                     Start Date
                   </label>
@@ -157,7 +157,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50 mb-2"
                   >
                     End Date
                   </label>
@@ -188,7 +188,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50"
                   >
                     Destination
                   </label>
@@ -209,7 +209,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50"
                   >
                     Travel Type
                   </label>
@@ -232,7 +232,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50"
                   >
                     SortBy
                   </label>
@@ -254,7 +254,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50"
                   >
                     SortOrder
                   </label>
@@ -274,7 +274,7 @@ const Filter = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor="manufacturer"
-                    className="text-sm font-medium text-stone-600"
+                    className="text-sm font-medium text-gray-50"
                   >
                     Limit
                   </label>

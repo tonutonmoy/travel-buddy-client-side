@@ -12,13 +12,13 @@ const TripRequestForm = ({ email, name, handler }: any) => {
   const toggle = true;
   return (
     <Container>
-      <div className=" grid gap-10  grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 my-10">
+      <div className=" grid gap-10  grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-2 my-10  text-gray-50">
         <div>
           <h1 className=" text-[25px]  font-semibold text-center mb-5 mt-20">
             Terms and conditions
           </h1>
 
-          <p className="text-gray-500 my-10">
+          <p className=" my-10">
             These Terms of Use constitute a legally binding agreement made
             between you, whether personally or on behalf of an entity ("you")
             and Bergside Inc. ("Company", "we", "us", or "our"), concerning your
@@ -67,7 +67,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
         <div>
           <form
             onSubmit={handler}
-            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10 shadow-lg  ${
+            className={`w-[90%] md:w-[90%] lg:w-[90%] xl:w-[95%] 2xl:w-[90%] mx-auto  mt-10 bg-gradient-to-r from-blue-500/20 to-blue-400/20   ${
               toggle && " border-[1px] "
             }  px-4 md:px-2  lg:px-4  xl:px-0  2xl:px-0   py-10  rounded-lg `}
           >
@@ -81,7 +81,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 <input
                   type="text"
                   placeholder="name"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-900 "
                   name="name"
                   value={name}
                   required
@@ -93,7 +93,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 <input
                   type="text"
                   placeholder="email"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-900 "
                   name="email"
                   value={email}
                   required
@@ -104,7 +104,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 <input
                   type="text"
                   placeholder="Number"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-900 "
                   name="number"
                   required
                 />
@@ -115,7 +115,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 <input
                   type="text"
                   placeholder="country"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-900 "
                   name="country"
                   required
                 />
@@ -126,7 +126,7 @@ const TripRequestForm = ({ email, name, handler }: any) => {
                 <input
                   type="text"
                   placeholder="city"
-                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-500 "
+                  className="input input-bordered input-md w-full max-w-xs my-3 text-gray-900 "
                   name="city"
                   required
                 />

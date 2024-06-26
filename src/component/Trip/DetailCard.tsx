@@ -21,38 +21,33 @@ const DetailCard = ({ data }: any) => {
 
   return (
     <section>
-      <div className=" flex justify-center  items-center rounded-full py-20 ">
-        <div className="card grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 lg:card-side w-[90%] md:w-[70%] lg:w-[90%] xl:w-[70%] 2xl:w-[50%]  bg-base-100 shadow-xl">
+      <div className=" flex justify-center  items-center rounded-full py-40 ">
+        <div className="card grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 lg:card-side w-[90%] md:w-[70%] lg:w-[90%] xl:w-[70%] 2xl:w-[50%]  shadow-xl bg-gradient-to-r from-blue-500/20 to-blue-400/20  text-gray-50">
           <div>
             {" "}
             <figure>
               <SliderCard images={photos} />
             </figure>
           </div>
-          <div className="card-body bg-white shadow-lg ">
+          <div className="card-body shadow-lg ">
             <div className=" space-y-5  py-5">
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">Travel type:</span>{" "}
-                {travelType}{" "}
+              <p>
+                <span className=" font-medium ">Travel type:</span> {travelType}{" "}
               </p>
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">Location:</span>{" "}
-                {location}{" "}
+              <p>
+                <span className=" font-medium ">Location:</span> {location}{" "}
               </p>
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">Start Date:</span>{" "}
-                {startDate}{" "}
+              <p>
+                <span className=" font-medium ">Start Date:</span> {startDate}{" "}
               </p>
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">End Date:</span>{" "}
-                {endDate}{" "}
+              <p>
+                <span className=" font-medium ">End Date:</span> {endDate}{" "}
               </p>
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">Itinerary:</span>{" "}
-                {itinerary}{" "}
+              <p>
+                <span className=" font-medium ">Itinerary:</span> {itinerary}{" "}
               </p>
-              <p className="text-gray-500">
-                <span className=" font-medium text-black">Description:</span>{" "}
+              <p>
+                <span className=" font-medium ">Description:</span>{" "}
                 {description}{" "}
               </p>
             </div>

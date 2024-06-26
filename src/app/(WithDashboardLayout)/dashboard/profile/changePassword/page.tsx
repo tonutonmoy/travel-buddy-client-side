@@ -44,18 +44,16 @@ const ChangePassword = () => {
   };
 
   return (
-    <div className="antialiased bg-slate-200 h-screen flex homeThumbnail-bg-img  items-center">
-      <div className=" w-[90%]  md:w-[50%]     lg:w-[50%]  xl:w-[30%]  2xl:w-[30%] mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
-        <h1 className="text-2xl text-slate-700 font-medium text-center">
+    <div className="antialiased  h-screen flex  items-center">
+      <div className=" w-[90%]  md:w-[50%]     lg:w-[50%]  xl:w-[30%]  2xl:w-[30%] mx-auto my-10 bg-gradient-to-r from-blue-500/30 to-blue-400/30 p-8 rounded-xl shadow-md shadow-gray-100 ">
+        <h1 className="text-2xl text-gray-50 font-medium text-center">
           Change password
         </h1>
 
         <form onSubmit={handleSubmit} className="my-10  ">
           <div className="flex flex-col space-y-5">
             <label htmlFor="email">
-              <p className="font-medium  text-slate-700 pb-2">
-                Current password
-              </p>
+              <p className="font-medium  text-gray-50 pb-2">Current password</p>
               <input
                 name="oldPassword"
                 type="text"
@@ -65,7 +63,7 @@ const ChangePassword = () => {
               />
             </label>
             <label htmlFor="email">
-              <p className="font-medium  text-slate-700 pb-2">New Password</p>
+              <p className="font-medium  text-gray-50 pb-2">New Password</p>
               <input
                 name="newPassword"
                 type="text"
@@ -76,9 +74,7 @@ const ChangePassword = () => {
             </label>
 
             <label htmlFor="email">
-              <p className="font-medium  text-slate-700 pb-2">
-                Confirm Password
-              </p>
+              <p className="font-medium  text-gray-50 pb-2">Confirm Password</p>
               <input
                 name="confirmPassword"
                 type="text"

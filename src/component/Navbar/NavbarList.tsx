@@ -1,4 +1,5 @@
 "use client";
+import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 import { getUserInfo } from "@/Services/Action/auth.services";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,6 +7,14 @@ import React from "react";
 
 const NavbarList = () => {
   const token = getUserInfo();
+  const { data, isLoading } = useGetProfileQuery("", {
+    pollingInterval: 0,
+    refetchOnMountOrArgChange: true,
+  });
+
+  if (isLoading) {
+    return "";
+  }
 
   const pathName = usePathname();
   return (
@@ -28,13 +37,16 @@ const NavbarList = () => {
       >
         Trip
       </Link>
-
-      <Link
-        href="/dashboard/createTrip"
-        className="block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent "
-      >
-        Create Trip
-      </Link>
+      {data?.data?.role === "Admin" ? (
+        ""
+      ) : (
+        <Link
+          href="/dashboard/createTrip"
+          className="block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent "
+        >
+          Create Trip
+        </Link>
+      )}
 
       <Link
         href="/about"

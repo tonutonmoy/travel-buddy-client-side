@@ -33,28 +33,25 @@ const TravelPostCard = ({ data, refetch }: any) => {
     }
   };
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg my-20">
+    <div className="max-w-sm rounded overflow-hidden shadow-xl bg-gradient-to-r from-blue-500/20 to-blue-400/20 text-gray-50 my-20">
       <figure>
         {" "}
         <img className=" h-[300px] w-full" src={photos?.[0]} alt="Mountain" />
       </figure>
 
       <div className=" space-y-1 px-10 py-5">
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">Destination:</span>{" "}
-          {destination}{" "}
+        <p className="">
+          <span className=" font-medium ">Destination:</span> {destination}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">startDate:</span>{" "}
-          {startDate}{" "}
+        <p className="">
+          <span className=" font-medium ">startDate:</span> {startDate}{" "}
         </p>
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">endDate:</span> {endDate}{" "}
+        <p className="">
+          <span className=" font-medium ">endDate:</span> {endDate}{" "}
         </p>
 
-        <p className="text-gray-500">
-          <span className=" font-medium text-black">Description:</span>{" "}
-          {description}{" "}
+        <p className="">
+          <span className=" font-medium ">Description:</span> {description}{" "}
         </p>
       </div>
 
