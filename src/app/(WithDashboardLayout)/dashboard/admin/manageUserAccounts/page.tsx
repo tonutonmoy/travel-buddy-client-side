@@ -26,9 +26,7 @@ const ManageUserAccounts = () => {
   ];
 
   if (isLoading) {
-    <div>
-      <Loading />
-    </div>;
+    return <Loading />;
   }
   if (error?.data?.message === "Your id is blocked") {
     isBlockHelper(error?.data?.message);
@@ -70,7 +68,6 @@ const ManageUserAccounts = () => {
     }
   };
 
-  console.log(data?.data, "d");
   return (
     <div>
       {data?.data?.length > 0 ? (

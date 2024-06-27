@@ -3,6 +3,7 @@ import SliderCard from "./SliderCard";
 import LinkButton from "../Button/LinkButton";
 import { useGetProfileQuery } from "@/Redux/api/profile/profileApi";
 import Link from "next/link";
+import Loading from "../Loading/Loading";
 
 const DetailCard = ({ data }: any) => {
   const { data: userData, isLoading } = useGetProfileQuery("");
@@ -18,7 +19,9 @@ const DetailCard = ({ data }: any) => {
     userId,
     travelType,
   } = data?.data || {};
-
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <section>
       <div className=" flex justify-center  items-center rounded-full py-40 ">

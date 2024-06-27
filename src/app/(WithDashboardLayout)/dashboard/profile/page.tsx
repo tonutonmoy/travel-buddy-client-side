@@ -8,6 +8,7 @@ import {
   getUserInfo,
   removeFromLocalStorage,
 } from "@/Services/Action/auth.services";
+import Loading from "@/component/Loading/Loading";
 import isBlockHelper from "@/helper/BlockHelper/isBlockHelper";
 
 import multipleImageHelper from "@/helper/imageHelper/multipleImageHelper";
@@ -18,7 +19,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const Profile = () => {
-  const { data, refetch, error }: any = useGetProfileQuery("", {
+  const { data, refetch, isLoading, error }: any = useGetProfileQuery("", {
     pollingInterval: 0,
     refetchOnMountOrArgChange: true,
   });
@@ -50,6 +51,9 @@ const Profile = () => {
     setBio(data?.data?.bio || "");
   }, [data]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
   const handler = async (e: any) => {
     e.preventDefault();
 

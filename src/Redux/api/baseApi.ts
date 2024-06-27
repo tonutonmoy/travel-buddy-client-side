@@ -1,22 +1,8 @@
 import { getUserInfo } from "@/Services/Action/auth.services";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:5000/api",
-  credentials: "include",
-  prepareHeaders: (headers) => {
-    const token = getUserInfo();
-
-    console.log(token, "token");
-    if (token) {
-      headers.set("authorization", `${token}`);
-    }
-
-    return headers;
-  },
-});
 // const baseQuery = fetchBaseQuery({
-//   baseUrl: "https://travel-buddy-matching-backend.vercel.app/api",
+//   baseUrl: "http://localhost:5000/api",
 //   credentials: "include",
 //   prepareHeaders: (headers) => {
 //     const token = getUserInfo();
@@ -29,6 +15,20 @@ const baseQuery = fetchBaseQuery({
 //     return headers;
 //   },
 // });
+const baseQuery = fetchBaseQuery({
+  baseUrl: "https://travel-buddy-matching-backend.vercel.app/api",
+  credentials: "include",
+  prepareHeaders: (headers) => {
+    const token = getUserInfo();
+
+    console.log(token, "token");
+    if (token) {
+      headers.set("authorization", `${token}`);
+    }
+
+    return headers;
+  },
+});
 
 export const baseApi = createApi({
   reducerPath: "baseApi",

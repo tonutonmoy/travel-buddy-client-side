@@ -17,11 +17,7 @@ const SidebarAllLinks = () => {
   console.log(location, "location");
 
   if (isLoading) {
-    return (
-      <div className="  flex justify-center  items-center h-full">
-        <Loading />
-      </div>
-    );
+    return null;
   }
 
   return (

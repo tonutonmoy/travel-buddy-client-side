@@ -36,6 +36,9 @@ const TravelPostEdit = ({ params }: any) => {
     setItinerary(data?.data?.itinerary || "");
     setDescription(data?.data?.description || "");
   }, [data]);
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const handler = async (e: any) => {
     e.preventDefault();
@@ -169,7 +172,9 @@ const TravelPostEdit = ({ params }: any) => {
 
             <section className=" text-center mt-10">
               {loading ? (
-                <Loading />
+                <button className="w-full md:w-[30%] mx-auto  flex justify-center bg-gradient-to-r from-blue-500 to-blue-400 hover:shadow-lg text-gray-100  rounded-full tracking-wide font-semibold shadow-lg cursor-pointer transition ease-in duration-500 py-2 px-5">
+                  <span className="loading loading-dots loading-md"></span>
+                </button>
               ) : (
                 <button className="w-full md:w-[30%] mx-auto  flex justify-center bg-gradient-to-r from-blue-500 to-blue-400 hover:shadow-lg text-gray-100  rounded-full tracking-wide font-semibold shadow-lg cursor-pointer transition ease-in duration-500 py-2 px-5">
                   Submit

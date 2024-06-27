@@ -31,8 +31,6 @@ const Filter = () => {
   const formatEndDate = dateHelper(endDate as Date);
   const { page }: any = useAppSelector((e) => e.trip);
 
-  console.log(page, "ccc");
-
   type MyObjectType = {
     // maxBudget: number | string;
     // minBudget: number | string;
@@ -74,11 +72,7 @@ const Filter = () => {
 
   console.log(startDate);
   if (isLoading) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
+    return null;
   }
 
   console.log(limit);

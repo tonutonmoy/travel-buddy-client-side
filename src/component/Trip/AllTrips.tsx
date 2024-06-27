@@ -9,8 +9,6 @@ import { useAppSelector } from "@/Redux/hooks";
 const AllTrips = () => {
   const { tripData }: any = useAppSelector((e) => e.trip);
 
-  console.log(tripData?.data, "trip");
-
   return (
     <Container>
       <section className=" grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-10 mt-20">

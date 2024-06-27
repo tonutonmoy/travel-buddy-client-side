@@ -26,7 +26,6 @@ const HomeSearching = () => {
     dispatch(setTripData(data));
   }, [data]);
 
-  console.log(data, "data");
   return (
     <div>
       <section className="my-10 ">
