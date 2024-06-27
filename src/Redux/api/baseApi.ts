@@ -15,8 +15,22 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 //     return headers;
 //   },
 // });
+// const baseQuery = fetchBaseQuery({
+//   baseUrl: "https://travel-buddy-matching-backend.vercel.app/api",
+//   credentials: "include",
+//   prepareHeaders: (headers) => {
+//     const token = getUserInfo();
+
+//     console.log(token, "token");
+//     if (token) {
+//       headers.set("authorization", `${token}`);
+//     }
+
+//     return headers;
+//   },
+// });
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://travel-buddy-matching-backend.vercel.app/api",
+  baseUrl: "https://travel-buddy-backend-side-production.up.railway.app/api",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = getUserInfo();
