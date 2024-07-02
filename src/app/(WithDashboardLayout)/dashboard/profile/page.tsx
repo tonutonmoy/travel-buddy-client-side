@@ -112,8 +112,8 @@ const Profile = () => {
     }
   };
   return (
-    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28   text-[#161931] flex flex-col items-center justify-center  overflow-hidden">
-      <section className="w-full min-h-screen py-1 flex flex-col items-center justify-center   ">
+    <div className=" w-full  gap-5 px-3 md:px-16 lg:px-28   text-[#161931] flex flex-col items-center justify-center  overflow-hidden ">
+      <section className="w-full min-h-screen py-1 flex flex-col items-center justify-center  my-20 lg:my-0 ">
         <div className="p-2 md:p-4 flex flex-col items-center justify-center  rounded-xl shadow-md   bg-gradient-to-r from-blue-500/30 to-blue-400/30 shadow-gray-100">
           <div className="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg  ">
             <div className="grid max-w-2xl mx-auto mt-8 ">

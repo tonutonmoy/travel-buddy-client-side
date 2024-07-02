@@ -82,10 +82,10 @@ const Filter = () => {
   const uniqueDestination = destinationHelper(getFilterData);
 
   return (
-    <div className=" mb-20 mt-40">
+    <div className=" mb-20 mt-40 bg-[#394E6E] lg:bg-black/0 w-[90%] lg:w-[95%] mx-auto  ">
       <div className="">
         <div className="flex flex-col">
-          <div className="rounded-xl border border-gray-200   p-6 shadow-lg">
+          <div className="rounded-xl border border-gray-200    p-6 shadow-lg">
             <form className="">
               <section className="my-10">
                 {/* searchTram start */}

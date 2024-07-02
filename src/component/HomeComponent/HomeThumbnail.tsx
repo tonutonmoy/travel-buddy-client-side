@@ -29,7 +29,7 @@ const HomeThumbnail = () => {
             {/* <span className=" text-blue-400  ">F</span> */}
             Find Your Perfect Travel Buddy
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-gray-100  mb-8">
             Discover amazing features and services that await you.
           </p>
           <a

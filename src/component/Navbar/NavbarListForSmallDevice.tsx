@@ -14,19 +14,20 @@ const NavbarListForSmallDevice = () => {
   });
 
   if (isLoading) {
-    return "";
+    return null;
   }
 
   return (
     <div
       tabIndex={0}
-      className="menu menu-sm bg-gradient-to-r from-blue-500 to-blue-400   dropdown-content mt-3 z-50 p-2 shadow rounded-box w-52"
+      className="menu menu-sm bg-[#394E6E]  dropdown-content mt-3 z-50 p-2 shadow rounded-box w-52  md:py-5 space-y-1 md:space-y-2 text-center "
     >
       <Link
         href="/"
         className={`${
-          pathName === "/" && "border-b-2"
-        } block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent   md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
+          pathName === "/" &&
+          "bg-blue-500/10 border rounded-full font-medium md:font-semibold"
+        } block p-1    hover:font-medium  md:hover:bg-transparent   md:p-1 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
         aria-current="page"
       >
         Home
@@ -35,8 +36,9 @@ const NavbarListForSmallDevice = () => {
       <Link
         href="/trip"
         className={`${
-          pathName === "/trip" && "border-b-2"
-        } block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent   md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
+          pathName === "/trip" &&
+          "bg-blue-500/10 border rounded-full font-medium md:font-semibold"
+        } block p-1    hover:font-medium  md:hover:bg-transparent   md:p-1 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
       >
         Trip
       </Link>
@@ -46,7 +48,7 @@ const NavbarListForSmallDevice = () => {
       ) : (
         <Link
           href="/dashboard/createTrip"
-          className="block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent "
+          className="block p-1   text-gray-100  md:hover:bg-transparent  md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent "
         >
           Create Trip
         </Link>
@@ -55,8 +57,9 @@ const NavbarListForSmallDevice = () => {
       <Link
         href="/about"
         className={`${
-          pathName === "/about" && "border-b-2"
-        } block py-2 px-3 text-gray-100  hover:bg-gray-100 md:hover:bg-transparent   md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
+          pathName === "/about" &&
+          "bg-blue-500/10 border rounded-full  font-medium md:font-semibold"
+        } block p-1   md:hover:bg-transparent   md:p-1 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `}
       >
         About Us
       </Link>
@@ -64,13 +67,13 @@ const NavbarListForSmallDevice = () => {
       {token && (
         <Link
           href="/dashboard"
-          className="block py-2 px-3 text-gray-100   md:hover:bg-transparent   md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+          className="block p-1  text-gray-100   md:hover:bg-transparent   md:p-0 dark:text-white  dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
         >
           Dashboard
         </Link>
       )}
 
-      <div className=" md:hidden">
+      <div className=" md:hidden flex justify-center my-2">
         {" "}
         <LoginAndLogout />
       </div>
