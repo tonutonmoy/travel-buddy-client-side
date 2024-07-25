@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import LinkButton from "../Button/LinkButton";
 
 const TripCard = ({ data }: any) => {
