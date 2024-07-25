@@ -32,7 +32,7 @@ const ManageTravelPosts = () => {
   return (
     <Container>
       {data?.data?.length > 0 ? (
-        <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 ">
+        <div className=" grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-10 ">
           {data?.data?.map((a: any) => (
             <TravelPostCard key={a?.id} data={a} refetch={refetch} />
           ))}

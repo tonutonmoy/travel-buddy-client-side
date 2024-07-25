@@ -9,7 +9,7 @@ const HomeCardComponent = () => {
   const { tripData }: any = useAppSelector((e) => e.trip);
   return (
     <div>
-      <div className="grid md:gap-10 lg:gap-0 xl:gap-0 2xl:gap-0 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4">
+      <div className="grid md:gap-10 lg:gap-0 xl:gap-0 2xl:gap-0  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-3 3xl:grid-cols-4">
         {tripData?.data?.slice(0, 10)?.map((a: any) => (
           <TripCard key={a?.id} data={a} />
         ))}
