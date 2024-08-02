@@ -11,6 +11,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.4",
     "@spreadtheweb/multi-range-slider": "^1.0.3",
+    "agora-react-uikit": "^1.2.0",
+    "agora-rtc-sdk-ng": "^4.21.0",
     "aos": "^3.0.0-beta.6",
     "gsap": "^3.12.5",
     "jsonwebtoken": "^9.0.2",

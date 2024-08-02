@@ -53,7 +53,19 @@ const SidebarAllLinks = ({ setIsOpen }: any) => {
                 >
                   {" "}
                   <MdHistory className="mr-2 text-xl" />
-                  Travel Request History
+                  Send Request History
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/dashboard/travel/gotRequestHistory"
+                  className={`flex items-center text-white  px-3 py-2.5 font-semibold ${
+                    location === "/dashboard/travel/gotRequestHistory" &&
+                    " bg-blue-500/10 border rounded-full"
+                  }`}
+                >
+                  {" "}
+                  <MdHistory className="mr-2 text-xl" />
+                  Trip Request History
                 </Link>
                 <Link
                   onClick={() => setIsOpen(false)}

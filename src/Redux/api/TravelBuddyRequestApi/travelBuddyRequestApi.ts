@@ -8,6 +8,19 @@ export const travelBuddyRequestApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    getGotTravelBuddyRequest: build.query({
+      query: () => ({
+        url: `/trip/gotRequest`,
+        method: "GET",
+      }),
+    }),
+    UpdateGotTravelBuddyRequest: build.mutation({
+      query: ({data,id}) => ({
+        url: `/trip/updateGotRequest/${id}`,
+        method: "PUT",
+        body: data
+      }),
+    }),
     createTravelBuddyRequest: build.mutation({
       query: ({
         tripId,
@@ -39,4 +52,6 @@ export const travelBuddyRequestApi = baseApi.injectEndpoints({
 export const {
   useCreateTravelBuddyRequestMutation,
   useGetTravelBuddyRequestQuery,
+  useGetGotTravelBuddyRequestQuery,
+ useUpdateGotTravelBuddyRequestMutation
 } = travelBuddyRequestApi;
