@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { FaHome, FaUser, FaUsers, FaBook } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 import { MdHistory } from "react-icons/md";
+import { FaChartBar } from "react-icons/fa";
 
 const SidebarAllLinks = ({ setIsOpen }: any) => {
   const { data, isLoading } = useGetProfileQuery("");
@@ -111,6 +112,16 @@ const SidebarAllLinks = ({ setIsOpen }: any) => {
                   }`}
                 >
                   <FaUsers className="mr-2 text-lg" /> Manage User Accounts
+                </Link>
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/dashboard/admin/chart"
+                  className={`flex items-center text-white  px-3 py-2.5 font-semibold ${
+                    location === "/dashboard/admin/chart" &&
+                    " bg-blue-500/10 border rounded-full"
+                  }`}
+                >
+                  <FaChartBar className="mr-2 text-lg" /> Chart
                 </Link>
                 <Link
                   onClick={() => setIsOpen(false)}
