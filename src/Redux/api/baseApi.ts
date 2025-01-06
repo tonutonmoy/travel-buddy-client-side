@@ -31,7 +31,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 // });
 const baseQuery = fetchBaseQuery({
   // baseUrl: "http://localhost:5000/api",
-  baseUrl: "https://travel-buddy-backend-side-production.up.railway.app/api",
+  // baseUrl: "https://travel-buddy-backend-side-production.up.railway.app/api",
+  baseUrl: "https://travel-buddy-matching-backend.vercel.app/api",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = getUserInfo();
